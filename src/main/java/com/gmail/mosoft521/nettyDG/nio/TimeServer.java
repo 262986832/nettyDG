@@ -17,3 +17,8 @@ public class TimeServer {
         new Thread(timeServer, "NIO-MultiplexerTimeServer-001").start();
     }
 }
+/*
+The time server is start in port : 8080
+The time server receive order : QUERY TIME ORDER
+...
+ */

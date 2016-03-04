@@ -2,9 +2,6 @@ package com.gmail.mosoft521.nettyDG.aio;
 
 public class TimeClient {
 
-    /**
-     * @param args
-     */
     public static void main(String[] args) {
         int port = 8080;
         if (args != null && args.length > 0) {
@@ -19,3 +16,6 @@ public class TimeClient {
                 "AIO-AsyncTimeClientHandler-001").start();
     }
 }
+/*
+Now is : Fri Mar 04 20:35:47 CST 2016
+ */

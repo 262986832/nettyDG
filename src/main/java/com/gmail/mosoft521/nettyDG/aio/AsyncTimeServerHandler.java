@@ -14,8 +14,7 @@ public class AsyncTimeServerHandler implements Runnable {
     public AsyncTimeServerHandler(int port) {
         this.port = port;
         try {
-            asynchronousServerSocketChannel = AsynchronousServerSocketChannel
-                    .open();
+            asynchronousServerSocketChannel = AsynchronousServerSocketChannel.open();
             asynchronousServerSocketChannel.bind(new InetSocketAddress(port));
             System.out.println("The time server is start in port : " + port);
         } catch (IOException e) {
@@ -41,7 +40,6 @@ public class AsyncTimeServerHandler implements Runnable {
     }
 
     public void doAccept() {
-        asynchronousServerSocketChannel.accept(this,
-                new AcceptCompletionHandler());
+        asynchronousServerSocketChannel.accept(this, new AcceptCompletionHandler());
     }
 }
