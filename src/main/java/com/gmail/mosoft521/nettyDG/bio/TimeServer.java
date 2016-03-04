@@ -34,3 +34,8 @@ public class TimeServer {
         }
     }
 }
+/*
+The time server is start in port : 8080
+The time server receive order : QUERY TIME ORDER
+...
+ */

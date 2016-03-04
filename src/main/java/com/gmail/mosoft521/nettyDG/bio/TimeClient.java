@@ -60,3 +60,7 @@ public class TimeClient {
         }
     }
 }
+/*
+Send order 2 server succeed.
+Now is : Fri Mar 04 19:18:49 CST 2016
+ */
