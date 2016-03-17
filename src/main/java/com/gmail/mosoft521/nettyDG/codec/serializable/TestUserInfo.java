@@ -18,7 +18,11 @@ public class TestUserInfo {
         System.out.println("The jdk serializable length is : " + b.length);
         bos.close();
         System.out.println("-------------------------------------");
-        System.out.println("The byte array serializable length is : "
-                + info.codeC().length);
+        System.out.println("The byte array serializable length is : " + info.codeC().length);
     }
 }
+/*
+The jdk serializable length is : 140
+-------------------------------------
+The byte array serializable length is : 24
+ */

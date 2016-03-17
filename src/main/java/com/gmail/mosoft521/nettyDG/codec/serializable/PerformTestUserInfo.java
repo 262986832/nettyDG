@@ -24,8 +24,7 @@ public class PerformTestUserInfo {
             bos.close();
         }
         long endTime = System.currentTimeMillis();
-        System.out.println("The jdk serializable cost time is  : "
-                + (endTime - startTime) + " ms");
+        System.out.println("The jdk serializable cost time is  : " + (endTime - startTime) + " ms");
 
         System.out.println("-------------------------------------");
 
@@ -35,7 +34,11 @@ public class PerformTestUserInfo {
             byte[] b = info.codeC(buffer);
         }
         endTime = System.currentTimeMillis();
-        System.out.println("The byte array serializable cost time is : "
-                + (endTime - startTime) + " ms");
+        System.out.println("The byte array serializable cost time is : " + (endTime - startTime) + " ms");
     }
 }
+/*
+The jdk serializable cost time is  : 1457 ms
+-------------------------------------
+The byte array serializable cost time is : 95 ms
+ */
