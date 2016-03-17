@@ -9,8 +9,7 @@ import java.util.logging.Logger;
 
 public class TimeClientHandler extends ChannelHandlerAdapter {
 
-    private static final Logger logger = Logger
-            .getLogger(TimeClientHandler.class.getName());
+    private static final Logger logger = Logger.getLogger(TimeClientHandler.class.getName());
 
     private int counter;
 
@@ -20,8 +19,7 @@ public class TimeClientHandler extends ChannelHandlerAdapter {
      * Creates a client-side handler.
      */
     public TimeClientHandler() {
-        req = ("QUERY TIME ORDER" + System.getProperty("line.separator"))
-                .getBytes();
+        req = ("QUERY TIME ORDER" + System.getProperty("line.separator")).getBytes();
     }
 
     @Override
@@ -41,15 +39,13 @@ public class TimeClientHandler extends ChannelHandlerAdapter {
         byte[] req = new byte[buf.readableBytes()];
         buf.readBytes(req);
         String body = new String(req, "UTF-8");
-        System.out.println("Now is : " + body + " ; the counter is : "
-                + ++counter);
+        System.out.println("Now is : " + body + " ; the counter is : " + ++counter);
     }
 
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
         // 释放资源
-        logger.warning("Unexpected exception from downstream : "
-                + cause.getMessage());
+        logger.warning("Unexpected exception from downstream : " + cause.getMessage());
         ctx.close();
     }
 }

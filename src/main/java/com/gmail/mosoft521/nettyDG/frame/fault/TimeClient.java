@@ -32,8 +32,7 @@ public class TimeClient {
                     .option(ChannelOption.TCP_NODELAY, true)
                     .handler(new ChannelInitializer<SocketChannel>() {
                         @Override
-                        public void initChannel(SocketChannel ch)
-                                throws Exception {
+                        public void initChannel(SocketChannel ch) throws Exception {
 
                             ch.pipeline().addLast(new TimeClientHandler());
                         }
@@ -50,3 +49,9 @@ public class TimeClient {
         }
     }
 }
+/*
+Now is : BAD ORDER
+BAD ORDER
+ ; the counter is : 1
+
+ */
