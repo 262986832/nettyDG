@@ -32,8 +32,7 @@ public class TimeClient {
                     .option(ChannelOption.TCP_NODELAY, true)
                     .handler(new ChannelInitializer<SocketChannel>() {
                         @Override
-                        public void initChannel(SocketChannel ch)
-                                throws Exception {
+                        public void initChannel(SocketChannel ch) throws Exception {
                             ch.pipeline().addLast(new TimeClientHandler());
                         }
                     });
@@ -49,3 +48,6 @@ public class TimeClient {
         }
     }
 }
+/*
+Now is : Thu Mar 17 16:42:23 CST 2016
+ */

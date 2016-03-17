@@ -50,6 +50,8 @@ public class TimeServer {
         protected void initChannel(SocketChannel arg0) throws Exception {
             arg0.pipeline().addLast(new TimeServerHandler());
         }
-
     }
 }
+/*
+The time server receive order : QUERY TIME ORDER
+ */

@@ -9,8 +9,7 @@ import java.util.logging.Logger;
 
 public class TimeClientHandler extends ChannelHandlerAdapter {
 
-    private static final Logger logger = Logger
-            .getLogger(TimeClientHandler.class.getName());
+    private static final Logger logger = Logger.getLogger(TimeClientHandler.class.getName());
 
     private final ByteBuf firstMessage;
 
@@ -30,8 +29,7 @@ public class TimeClientHandler extends ChannelHandlerAdapter {
     }
 
     @Override
-    public void channelRead(ChannelHandlerContext ctx, Object msg)
-            throws Exception {
+    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         ByteBuf buf = (ByteBuf) msg;
         byte[] req = new byte[buf.readableBytes()];
         buf.readBytes(req);
@@ -42,8 +40,7 @@ public class TimeClientHandler extends ChannelHandlerAdapter {
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
         // 释放资源
-        logger.warning("Unexpected exception from downstream : "
-                + cause.getMessage());
+        logger.warning("Unexpected exception from downstream : " + cause.getMessage());
         ctx.close();
     }
 }
