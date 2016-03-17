@@ -38,10 +38,8 @@ public class EchoServer {
                     .handler(new LoggingHandler(LogLevel.INFO))
                     .childHandler(new ChannelInitializer<SocketChannel>() {
                         @Override
-                        public void initChannel(SocketChannel ch)
-                                throws Exception {
-                            ch.pipeline().addLast(
-                                    new FixedLengthFrameDecoder(20));
+                        public void initChannel(SocketChannel ch) throws Exception {
+                            ch.pipeline().addLast(new FixedLengthFrameDecoder(20));//固定长度解码器
                             ch.pipeline().addLast(new StringDecoder());
                             ch.pipeline().addLast(new EchoServerHandler());
                         }
@@ -59,3 +57,8 @@ public class EchoServer {
         }
     }
 }
+/*
+telnet localhost 8080
+输入123456789012345678901234
+Receive client : [12345678901234567890]
+ */
