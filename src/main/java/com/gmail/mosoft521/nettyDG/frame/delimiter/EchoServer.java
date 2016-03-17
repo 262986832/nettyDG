@@ -40,13 +40,9 @@ public class EchoServer {
                     .handler(new LoggingHandler(LogLevel.INFO))
                     .childHandler(new ChannelInitializer<SocketChannel>() {
                         @Override
-                        public void initChannel(SocketChannel ch)
-                                throws Exception {
-                            ByteBuf delimiter = Unpooled.copiedBuffer("$_"
-                                    .getBytes());
-                            ch.pipeline().addLast(
-                                    new DelimiterBasedFrameDecoder(1024,
-                                            delimiter));
+                        public void initChannel(SocketChannel ch) throws Exception {
+                            ByteBuf delimiter = Unpooled.copiedBuffer("$_".getBytes());
+                            ch.pipeline().addLast(new DelimiterBasedFrameDecoder(1024, delimiter));
                             ch.pipeline().addLast(new StringDecoder());
                             ch.pipeline().addLast(new EchoServerHandler());
                         }
@@ -64,3 +60,15 @@ public class EchoServer {
         }
     }
 }
+/*
+This is 1 times receive client : [Hi, Lilinfeng. Welcome to Netty.]
+This is 2 times receive client : [Hi, Lilinfeng. Welcome to Netty.]
+This is 3 times receive client : [Hi, Lilinfeng. Welcome to Netty.]
+This is 4 times receive client : [Hi, Lilinfeng. Welcome to Netty.]
+This is 5 times receive client : [Hi, Lilinfeng. Welcome to Netty.]
+This is 6 times receive client : [Hi, Lilinfeng. Welcome to Netty.]
+This is 7 times receive client : [Hi, Lilinfeng. Welcome to Netty.]
+This is 8 times receive client : [Hi, Lilinfeng. Welcome to Netty.]
+This is 9 times receive client : [Hi, Lilinfeng. Welcome to Netty.]
+This is 10 times receive client : [Hi, Lilinfeng. Welcome to Netty.]
+ */
