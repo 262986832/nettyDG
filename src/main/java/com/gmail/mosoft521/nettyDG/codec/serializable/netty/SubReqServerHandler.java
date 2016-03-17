@@ -14,8 +14,7 @@ public class SubReqServerHandler extends ChannelHandlerAdapter {
             throws Exception {
         SubscribeReq req = (SubscribeReq) msg;
         if ("Lilinfeng".equalsIgnoreCase(req.getUserName())) {
-            System.out.println("Service accept client subscrib req : ["
-                    + req.toString() + "]");
+            System.out.println("Service accept client subscrib req : [" + req.toString() + "]");
             ctx.writeAndFlush(resp(req.getSubReqID()));
         }
     }

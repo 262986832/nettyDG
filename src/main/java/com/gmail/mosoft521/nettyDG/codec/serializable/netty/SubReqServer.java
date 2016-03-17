@@ -40,14 +40,7 @@ public class SubReqServer {
                     .childHandler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         public void initChannel(SocketChannel ch) {
-                            ch.pipeline()
-                                    .addLast(
-                                            new ObjectDecoder(
-                                                    1024 * 1024,
-                                                    ClassResolvers
-                                                            .weakCachingConcurrentResolver(this
-                                                                    .getClass()
-                                                                    .getClassLoader())));
+                            ch.pipeline().addLast(new ObjectDecoder(1024 * 1024, ClassResolvers.weakCachingConcurrentResolver(this.getClass().getClassLoader())));
                             ch.pipeline().addLast(new ObjectEncoder());
                             ch.pipeline().addLast(new SubReqServerHandler());
                         }
@@ -65,3 +58,16 @@ public class SubReqServer {
         }
     }
 }
+/*
+Service accept client subscrib req : [SubscribeReq [subReqID=0, userName=Lilinfeng, productName=Netty 最佳实践和原理分析, phoneNumber=138xxxxxxxxx, address=南京市雨花台区软件大道101号华为基地]]
+Service accept client subscrib req : [SubscribeReq [subReqID=1, userName=Lilinfeng, productName=Netty 最佳实践和原理分析, phoneNumber=138xxxxxxxxx, address=南京市雨花台区软件大道101号华为基地]]
+Service accept client subscrib req : [SubscribeReq [subReqID=2, userName=Lilinfeng, productName=Netty 最佳实践和原理分析, phoneNumber=138xxxxxxxxx, address=南京市雨花台区软件大道101号华为基地]]
+Service accept client subscrib req : [SubscribeReq [subReqID=3, userName=Lilinfeng, productName=Netty 最佳实践和原理分析, phoneNumber=138xxxxxxxxx, address=南京市雨花台区软件大道101号华为基地]]
+Service accept client subscrib req : [SubscribeReq [subReqID=4, userName=Lilinfeng, productName=Netty 最佳实践和原理分析, phoneNumber=138xxxxxxxxx, address=南京市雨花台区软件大道101号华为基地]]
+Service accept client subscrib req : [SubscribeReq [subReqID=5, userName=Lilinfeng, productName=Netty 最佳实践和原理分析, phoneNumber=138xxxxxxxxx, address=南京市雨花台区软件大道101号华为基地]]
+Service accept client subscrib req : [SubscribeReq [subReqID=6, userName=Lilinfeng, productName=Netty 最佳实践和原理分析, phoneNumber=138xxxxxxxxx, address=南京市雨花台区软件大道101号华为基地]]
+Service accept client subscrib req : [SubscribeReq [subReqID=7, userName=Lilinfeng, productName=Netty 最佳实践和原理分析, phoneNumber=138xxxxxxxxx, address=南京市雨花台区软件大道101号华为基地]]
+Service accept client subscrib req : [SubscribeReq [subReqID=8, userName=Lilinfeng, productName=Netty 最佳实践和原理分析, phoneNumber=138xxxxxxxxx, address=南京市雨花台区软件大道101号华为基地]]
+Service accept client subscrib req : [SubscribeReq [subReqID=9, userName=Lilinfeng, productName=Netty 最佳实践和原理分析, phoneNumber=138xxxxxxxxx, address=南京市雨花台区软件大道101号华为基地]]
+
+ */
