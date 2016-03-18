@@ -56,3 +56,45 @@ public class SubReqClient {
         }
     }
 }
+/*
+Receive server response : [subReqID: 0
+respCode: 0
+desc: "Netty book order succeed, 3 days later, sent to the designated address"
+]
+Receive server response : [subReqID: 1
+respCode: 0
+desc: "Netty book order succeed, 3 days later, sent to the designated address"
+]
+Receive server response : [subReqID: 2
+respCode: 0
+desc: "Netty book order succeed, 3 days later, sent to the designated address"
+]
+Receive server response : [subReqID: 3
+respCode: 0
+desc: "Netty book order succeed, 3 days later, sent to the designated address"
+]
+Receive server response : [subReqID: 4
+respCode: 0
+desc: "Netty book order succeed, 3 days later, sent to the designated address"
+]
+Receive server response : [subReqID: 5
+respCode: 0
+desc: "Netty book order succeed, 3 days later, sent to the designated address"
+]
+Receive server response : [subReqID: 6
+respCode: 0
+desc: "Netty book order succeed, 3 days later, sent to the designated address"
+]
+Receive server response : [subReqID: 7
+respCode: 0
+desc: "Netty book order succeed, 3 days later, sent to the designated address"
+]
+Receive server response : [subReqID: 8
+respCode: 0
+desc: "Netty book order succeed, 3 days later, sent to the designated address"
+]
+Receive server response : [subReqID: 9
+respCode: 0
+desc: "Netty book order succeed, 3 days later, sent to the designated address"
+]
+ */
