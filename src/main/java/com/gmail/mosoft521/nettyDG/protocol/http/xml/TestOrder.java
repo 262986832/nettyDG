@@ -25,7 +25,6 @@ public class TestOrder {
         String body = test.encode2Xml(order);
         Order order2 = test.decode2Order(body);
         System.out.println(order2);
-
     }
 
     private String encode2Xml(Order order) throws JiBXException, IOException {

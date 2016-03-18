@@ -38,28 +38,17 @@ public class HttpXmlServer {
                     .channel(NioServerSocketChannel.class)
                     .childHandler(new ChannelInitializer<SocketChannel>() {
                         @Override
-                        protected void initChannel(SocketChannel ch)
-                                throws Exception {
-                            ch.pipeline().addLast("http-decoder",
-                                    new HttpRequestDecoder());
-                            ch.pipeline().addLast("http-aggregator",
-                                    new HttpObjectAggregator(65536));
-                            ch.pipeline()
-                                    .addLast(
-                                            "xml-decoder",
-                                            new HttpXmlRequestDecoder(
-                                                    Order.class, true));
-                            ch.pipeline().addLast("http-encoder",
-                                    new HttpResponseEncoder());
-                            ch.pipeline().addLast("xml-encoder",
-                                    new HttpXmlResponseEncoder());
-                            ch.pipeline().addLast("xmlServerHandler",
-                                    new HttpXmlServerHandler());
+                        protected void initChannel(SocketChannel ch) throws Exception {
+                            ch.pipeline().addLast("http-decoder", new HttpRequestDecoder());
+                            ch.pipeline().addLast("http-aggregator", new HttpObjectAggregator(65536));
+                            ch.pipeline().addLast("xml-decoder", new HttpXmlRequestDecoder(Order.class, true));
+                            ch.pipeline().addLast("http-encoder", new HttpResponseEncoder());
+                            ch.pipeline().addLast("xml-encoder", new HttpXmlResponseEncoder());
+                            ch.pipeline().addLast("xmlServerHandler", new HttpXmlServerHandler());
                         }
                     });
             ChannelFuture future = b.bind(new InetSocketAddress(port)).sync();
-            System.out.println("HTTP订购服务器启动，网址是 : " + "http://localhost:"
-                    + port);
+            System.out.println("HTTP订购服务器启动，网址是 : " + "http://localhost:" + port);
             future.channel().closeFuture().sync();
         } finally {
             bossGroup.shutdownGracefully();

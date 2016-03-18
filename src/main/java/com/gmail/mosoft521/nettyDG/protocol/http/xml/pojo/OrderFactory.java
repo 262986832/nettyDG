@@ -1,7 +1,6 @@
 package com.gmail.mosoft521.nettyDG.protocol.http.xml.pojo;
 
 public class OrderFactory {
-
     public static Order create(long orderID) {
         Order order = new Order();
         order.setOrderNumber(orderID);

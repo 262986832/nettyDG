@@ -28,24 +28,19 @@ import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
 public class HttpXmlServerHandler extends
         SimpleChannelInboundHandler<HttpXmlRequest> {
 
-    private static void sendError(ChannelHandlerContext ctx,
-                                  HttpResponseStatus status) {
-        FullHttpResponse response = new DefaultFullHttpResponse(HTTP_1_1,
-                status, Unpooled.copiedBuffer("失败: " + status.toString()
-                + "\r\n", CharsetUtil.UTF_8));
+    private static void sendError(ChannelHandlerContext ctx, HttpResponseStatus status) {
+        FullHttpResponse response = new DefaultFullHttpResponse(HTTP_1_1, status, Unpooled.copiedBuffer("失败: " + status.toString() + "\r\n", CharsetUtil.UTF_8));
         response.headers().set(CONTENT_TYPE, "text/plain; charset=UTF-8");
         ctx.writeAndFlush(response).addListener(ChannelFutureListener.CLOSE);
     }
 
     @Override
-    public void messageReceived(final ChannelHandlerContext ctx,
-                                HttpXmlRequest xmlRequest) throws Exception {
+    public void messageReceived(final ChannelHandlerContext ctx, HttpXmlRequest xmlRequest) throws Exception {
         HttpRequest request = xmlRequest.getRequest();
         Order order = (Order) xmlRequest.getBody();
         System.out.println("Http server receive request : " + order);
         dobusiness(order);
-        ChannelFuture future = ctx.writeAndFlush(new HttpXmlResponse(null,
-                order));
+        ChannelFuture future = ctx.writeAndFlush(new HttpXmlResponse(null, order));
         if (!isKeepAlive(request)) {
             future.addListener(new GenericFutureListener<Future<? super Void>>() {
                 public void operationComplete(Future future) throws Exception {
@@ -71,8 +66,7 @@ public class HttpXmlServerHandler extends
     }
 
     @Override
-    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause)
-            throws Exception {
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
         cause.printStackTrace();
         if (ctx.channel().isActive()) {
             sendError(ctx, INTERNAL_SERVER_ERROR);
