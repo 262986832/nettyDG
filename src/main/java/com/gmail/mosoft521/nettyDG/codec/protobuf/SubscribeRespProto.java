@@ -1,13 +1,9 @@
 package com.gmail.mosoft521.nettyDG.codec.protobuf;
 
 public final class SubscribeRespProto {
-    private static com.google.protobuf.Descriptors.Descriptor
-            internal_static_netty_SubscribeResp_descriptor;
-    private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internal_static_netty_SubscribeResp_fieldAccessorTable;
-    private static com.google.protobuf.Descriptors.FileDescriptor
-            descriptor;
+    private static com.google.protobuf.Descriptors.Descriptor internal_static_netty_SubscribeResp_descriptor;
+    private static com.google.protobuf.GeneratedMessage.FieldAccessorTable internal_static_netty_SubscribeResp_fieldAccessorTable;
+    private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
 
     static {
         String[] descriptorData = {

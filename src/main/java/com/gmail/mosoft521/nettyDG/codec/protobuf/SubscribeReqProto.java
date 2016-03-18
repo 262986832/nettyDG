@@ -1,13 +1,9 @@
 package com.gmail.mosoft521.nettyDG.codec.protobuf;
 
 public final class SubscribeReqProto {
-    private static com.google.protobuf.Descriptors.Descriptor
-            internal_static_netty_SubscribeReq_descriptor;
-    private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internal_static_netty_SubscribeReq_fieldAccessorTable;
-    private static com.google.protobuf.Descriptors.FileDescriptor
-            descriptor;
+    private static com.google.protobuf.Descriptors.Descriptor internal_static_netty_SubscribeReq_descriptor;
+    private static com.google.protobuf.GeneratedMessage.FieldAccessorTable internal_static_netty_SubscribeReq_fieldAccessorTable;
+    private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
 
     static {
         String[] descriptorData = {
@@ -19,22 +15,14 @@ public final class SubscribeReqProto {
         };
         com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
                 new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-                    public com.google.protobuf.ExtensionRegistry assignDescriptors(
-                            com.google.protobuf.Descriptors.FileDescriptor root) {
+                    public com.google.protobuf.ExtensionRegistry assignDescriptors(com.google.protobuf.Descriptors.FileDescriptor root) {
                         descriptor = root;
-                        internal_static_netty_SubscribeReq_descriptor =
-                                getDescriptor().getMessageTypes().get(0);
-                        internal_static_netty_SubscribeReq_fieldAccessorTable = new
-                                com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                                internal_static_netty_SubscribeReq_descriptor,
-                                new String[]{"SubReqID", "UserName", "ProductName", "Address",});
+                        internal_static_netty_SubscribeReq_descriptor = getDescriptor().getMessageTypes().get(0);
+                        internal_static_netty_SubscribeReq_fieldAccessorTable = new com.google.protobuf.GeneratedMessage.FieldAccessorTable(internal_static_netty_SubscribeReq_descriptor, new String[]{"SubReqID", "UserName", "ProductName", "Address",});
                         return null;
                     }
                 };
-        com.google.protobuf.Descriptors.FileDescriptor
-                .internalBuildGeneratedFileFrom(descriptorData,
-                        new com.google.protobuf.Descriptors.FileDescriptor[]{
-                        }, assigner);
+        com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(descriptorData, new com.google.protobuf.Descriptors.FileDescriptor[]{}, assigner);
     }
 
     private SubscribeReqProto() {
@@ -44,13 +32,11 @@ public final class SubscribeReqProto {
             com.google.protobuf.ExtensionRegistry registry) {
     }
 
-    public static com.google.protobuf.Descriptors.FileDescriptor
-    getDescriptor() {
+    public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
         return descriptor;
     }
 
-    public interface SubscribeReqOrBuilder
-            extends com.google.protobuf.MessageOrBuilder {
+    public interface SubscribeReqOrBuilder extends com.google.protobuf.MessageOrBuilder {
 
         // required int32 subReqID = 1;
 
@@ -141,15 +127,14 @@ public final class SubscribeReqProto {
         public static final int ADDRESS_FIELD_NUMBER = 4;
         private static final SubscribeReq defaultInstance;
         private static final long serialVersionUID = 0L;
-        public static com.google.protobuf.Parser<SubscribeReq> PARSER =
-                new com.google.protobuf.AbstractParser<SubscribeReq>() {
-                    public SubscribeReq parsePartialFrom(
-                            com.google.protobuf.CodedInputStream input,
-                            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                            throws com.google.protobuf.InvalidProtocolBufferException {
-                        return new SubscribeReq(input, extensionRegistry);
-                    }
-                };
+        public static com.google.protobuf.Parser<SubscribeReq> PARSER = new com.google.protobuf.AbstractParser<SubscribeReq>() {
+            public SubscribeReq parsePartialFrom(
+                    com.google.protobuf.CodedInputStream input,
+                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                    throws com.google.protobuf.InvalidProtocolBufferException {
+                return new SubscribeReq(input, extensionRegistry);
+            }
+        };
 
         static {
             defaultInstance = new SubscribeReq(true);
@@ -181,8 +166,7 @@ public final class SubscribeReqProto {
                 throws com.google.protobuf.InvalidProtocolBufferException {
             initFields();
             int mutable_bitField0_ = 0;
-            com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-                    com.google.protobuf.UnknownFieldSet.newBuilder();
+            com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet.newBuilder();
             try {
                 boolean done = false;
                 while (!done) {
@@ -226,8 +210,7 @@ public final class SubscribeReqProto {
             } catch (com.google.protobuf.InvalidProtocolBufferException e) {
                 throw e.setUnfinishedMessage(this);
             } catch (java.io.IOException e) {
-                throw new com.google.protobuf.InvalidProtocolBufferException(
-                        e.getMessage()).setUnfinishedMessage(this);
+                throw new com.google.protobuf.InvalidProtocolBufferException(e.getMessage()).setUnfinishedMessage(this);
             } finally {
                 if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
                     address_ = new com.google.protobuf.UnmodifiableLazyStringList(address_);
@@ -246,21 +229,15 @@ public final class SubscribeReqProto {
             return SubscribeReqProto.internal_static_netty_SubscribeReq_descriptor;
         }
 
-        public static SubscribeReq parseFrom(
-                com.google.protobuf.ByteString data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
+        public static SubscribeReq parseFrom(com.google.protobuf.ByteString data) throws com.google.protobuf.InvalidProtocolBufferException {
             return PARSER.parseFrom(data);
         }
 
-        public static SubscribeReq parseFrom(
-                com.google.protobuf.ByteString data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
+        public static SubscribeReq parseFrom(com.google.protobuf.ByteString data, com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws com.google.protobuf.InvalidProtocolBufferException {
             return PARSER.parseFrom(data, extensionRegistry);
         }
 
-        public static SubscribeReq parseFrom(byte[] data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
+        public static SubscribeReq parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
             return PARSER.parseFrom(data);
         }
 
@@ -271,40 +248,27 @@ public final class SubscribeReqProto {
             return PARSER.parseFrom(data, extensionRegistry);
         }
 
-        public static SubscribeReq parseFrom(java.io.InputStream input)
-                throws java.io.IOException {
+        public static SubscribeReq parseFrom(java.io.InputStream input) throws java.io.IOException {
             return PARSER.parseFrom(input);
         }
 
-        public static SubscribeReq parseFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
+        public static SubscribeReq parseFrom(java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
             return PARSER.parseFrom(input, extensionRegistry);
         }
 
-        public static SubscribeReq parseDelimitedFrom(java.io.InputStream input)
-                throws java.io.IOException {
+        public static SubscribeReq parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
             return PARSER.parseDelimitedFrom(input);
         }
 
-        public static SubscribeReq parseDelimitedFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
+        public static SubscribeReq parseDelimitedFrom(java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
             return PARSER.parseDelimitedFrom(input, extensionRegistry);
         }
 
-        public static SubscribeReq parseFrom(
-                com.google.protobuf.CodedInputStream input)
-                throws java.io.IOException {
+        public static SubscribeReq parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
             return PARSER.parseFrom(input);
         }
 
-        public static SubscribeReq parseFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
+        public static SubscribeReq parseFrom(com.google.protobuf.CodedInputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry) throws java.io.IOException {
             return PARSER.parseFrom(input, extensionRegistry);
         }
 
@@ -321,16 +285,12 @@ public final class SubscribeReqProto {
         }
 
         @Override
-        public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
+        public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
             return this.unknownFields;
         }
 
-        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return SubscribeReqProto.internal_static_netty_SubscribeReq_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            SubscribeReq.class, SubscribeReq.Builder.class);
+        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable internalGetFieldAccessorTable() {
+            return SubscribeReqProto.internal_static_netty_SubscribeReq_fieldAccessorTable.ensureFieldAccessorsInitialized(SubscribeReq.class, SubscribeReq.Builder.class);
         }
 
         @Override
@@ -367,8 +327,7 @@ public final class SubscribeReqProto {
             if (ref instanceof String) {
                 return (String) ref;
             } else {
-                com.google.protobuf.ByteString bs =
-                        (com.google.protobuf.ByteString) ref;
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
                 String s = bs.toStringUtf8();
                 if (bs.isValidUtf8()) {
                     userName_ = s;
@@ -384,9 +343,7 @@ public final class SubscribeReqProto {
         getUserNameBytes() {
             Object ref = userName_;
             if (ref instanceof String) {
-                com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8(
-                                (String) ref);
+                com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((String) ref);
                 userName_ = b;
                 return b;
             } else {
@@ -409,8 +366,7 @@ public final class SubscribeReqProto {
             if (ref instanceof String) {
                 return (String) ref;
             } else {
-                com.google.protobuf.ByteString bs =
-                        (com.google.protobuf.ByteString) ref;
+                com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
                 String s = bs.toStringUtf8();
                 if (bs.isValidUtf8()) {
                     productName_ = s;
@@ -426,9 +382,7 @@ public final class SubscribeReqProto {
         getProductNameBytes() {
             Object ref = productName_;
             if (ref instanceof String) {
-                com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8(
-                                (String) ref);
+                com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8((String) ref);
                 productName_ = b;
                 return b;
             } else {
@@ -439,8 +393,7 @@ public final class SubscribeReqProto {
         /**
          * <code>repeated string address = 4;</code>
          */
-        public java.util.List<String>
-        getAddressList() {
+        public java.util.List<String> getAddressList() {
             return address_;
         }
 
@@ -461,8 +414,7 @@ public final class SubscribeReqProto {
         /**
          * <code>repeated string address = 4;</code>
          */
-        public com.google.protobuf.ByteString
-        getAddressBytes(int index) {
+        public com.google.protobuf.ByteString getAddressBytes(int index) {
             return address_.getByteString(index);
         }
 
@@ -493,8 +445,7 @@ public final class SubscribeReqProto {
             return true;
         }
 
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                throws java.io.IOException {
+        public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
             getSerializedSize();
             if (((bitField0_ & 0x00000001) == 0x00000001)) {
                 output.writeInt32(1, subReqID_);
