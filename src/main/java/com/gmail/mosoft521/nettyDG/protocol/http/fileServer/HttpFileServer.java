@@ -14,7 +14,7 @@ import io.netty.handler.stream.ChunkedWriteHandler;
 
 public class HttpFileServer {
 
-    private static final String DEFAULT_URL = "/src/com/phei/netty/";
+    private static final String DEFAULT_URL = "/src/main/java/com/gmail/mosoft521/nettyDG/";
 
     public static void main(String[] args) throws Exception {
         int port = 8080;
@@ -40,23 +40,16 @@ public class HttpFileServer {
                     .channel(NioServerSocketChannel.class)
                     .childHandler(new ChannelInitializer<SocketChannel>() {
                         @Override
-                        protected void initChannel(SocketChannel ch)
-                                throws Exception {
-                            ch.pipeline().addLast("http-decoder",
-                                    new HttpRequestDecoder());
-                            ch.pipeline().addLast("http-aggregator",
-                                    new HttpObjectAggregator(65536));
-                            ch.pipeline().addLast("http-encoder",
-                                    new HttpResponseEncoder());
-                            ch.pipeline().addLast("http-chunked",
-                                    new ChunkedWriteHandler());
-                            ch.pipeline().addLast("fileServerHandler",
-                                    new HttpFileServerHandler(url));
+                        protected void initChannel(SocketChannel ch) throws Exception {
+                            ch.pipeline().addLast("http-decoder", new HttpRequestDecoder());
+                            ch.pipeline().addLast("http-aggregator", new HttpObjectAggregator(65536));
+                            ch.pipeline().addLast("http-encoder", new HttpResponseEncoder());
+                            ch.pipeline().addLast("http-chunked", new ChunkedWriteHandler());
+                            ch.pipeline().addLast("fileServerHandler", new HttpFileServerHandler(url));
                         }
                     });
-            ChannelFuture future = b.bind("192.168.1.102", port).sync();
-            System.out.println("HTTP文件目录服务器启动，网址是 : " + "http://192.168.1.102:"
-                    + port + url);
+            ChannelFuture future = b.bind("10.0.21.83", port).sync();
+            System.out.println("HTTP文件目录服务器启动，网址是 : " + "http://10.0.21.83:" + port + url);
             future.channel().closeFuture().sync();
         } finally {
             bossGroup.shutdownGracefully();
