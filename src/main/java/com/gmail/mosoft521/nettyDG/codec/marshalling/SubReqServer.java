@@ -37,12 +37,8 @@ public class SubReqServer {
                     .childHandler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         public void initChannel(SocketChannel ch) {
-                            ch.pipeline().addLast(
-                                    MarshallingCodeCFactory
-                                            .buildMarshallingDecoder());
-                            ch.pipeline().addLast(
-                                    MarshallingCodeCFactory
-                                            .buildMarshallingEncoder());
+                            ch.pipeline().addLast(MarshallingCodeCFactory.buildMarshallingDecoder());
+                            ch.pipeline().addLast(MarshallingCodeCFactory.buildMarshallingEncoder());
                             ch.pipeline().addLast(new SubReqServerHandler());
                         }
                     });
@@ -59,3 +55,15 @@ public class SubReqServer {
         }
     }
 }
+/*
+Service accept client subscrib req : [SubscribeReq [subReqID=0, userName=Lilinfeng, productName=Netty Book For Marshalling, phoneNumber=138xxxxxxxxx, address=NanJing YuHuaTai]]
+Service accept client subscrib req : [SubscribeReq [subReqID=1, userName=Lilinfeng, productName=Netty Book For Marshalling, phoneNumber=138xxxxxxxxx, address=NanJing YuHuaTai]]
+Service accept client subscrib req : [SubscribeReq [subReqID=2, userName=Lilinfeng, productName=Netty Book For Marshalling, phoneNumber=138xxxxxxxxx, address=NanJing YuHuaTai]]
+Service accept client subscrib req : [SubscribeReq [subReqID=3, userName=Lilinfeng, productName=Netty Book For Marshalling, phoneNumber=138xxxxxxxxx, address=NanJing YuHuaTai]]
+Service accept client subscrib req : [SubscribeReq [subReqID=4, userName=Lilinfeng, productName=Netty Book For Marshalling, phoneNumber=138xxxxxxxxx, address=NanJing YuHuaTai]]
+Service accept client subscrib req : [SubscribeReq [subReqID=5, userName=Lilinfeng, productName=Netty Book For Marshalling, phoneNumber=138xxxxxxxxx, address=NanJing YuHuaTai]]
+Service accept client subscrib req : [SubscribeReq [subReqID=6, userName=Lilinfeng, productName=Netty Book For Marshalling, phoneNumber=138xxxxxxxxx, address=NanJing YuHuaTai]]
+Service accept client subscrib req : [SubscribeReq [subReqID=7, userName=Lilinfeng, productName=Netty Book For Marshalling, phoneNumber=138xxxxxxxxx, address=NanJing YuHuaTai]]
+Service accept client subscrib req : [SubscribeReq [subReqID=8, userName=Lilinfeng, productName=Netty Book For Marshalling, phoneNumber=138xxxxxxxxx, address=NanJing YuHuaTai]]
+Service accept client subscrib req : [SubscribeReq [subReqID=9, userName=Lilinfeng, productName=Netty Book For Marshalling, phoneNumber=138xxxxxxxxx, address=NanJing YuHuaTai]]
+ */

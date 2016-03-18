@@ -32,14 +32,9 @@ public class SubReqClient {
                     .option(ChannelOption.TCP_NODELAY, true)
                     .handler(new ChannelInitializer<SocketChannel>() {
                         @Override
-                        public void initChannel(SocketChannel ch)
-                                throws Exception {
-                            ch.pipeline().addLast(
-                                    MarshallingCodeCFactory
-                                            .buildMarshallingDecoder());
-                            ch.pipeline().addLast(
-                                    MarshallingCodeCFactory
-                                            .buildMarshallingEncoder());
+                        public void initChannel(SocketChannel ch) throws Exception {
+                            ch.pipeline().addLast(MarshallingCodeCFactory.buildMarshallingDecoder());
+                            ch.pipeline().addLast(MarshallingCodeCFactory.buildMarshallingEncoder());
                             ch.pipeline().addLast(new SubReqClientHandler());
                         }
                     });
@@ -55,3 +50,15 @@ public class SubReqClient {
         }
     }
 }
+/*
+Receive server response : [SubscribeResp [subReqID=0, respCode=0, desc=Netty book order succeed, 3 days later, sent to the designated address]]
+Receive server response : [SubscribeResp [subReqID=1, respCode=0, desc=Netty book order succeed, 3 days later, sent to the designated address]]
+Receive server response : [SubscribeResp [subReqID=2, respCode=0, desc=Netty book order succeed, 3 days later, sent to the designated address]]
+Receive server response : [SubscribeResp [subReqID=3, respCode=0, desc=Netty book order succeed, 3 days later, sent to the designated address]]
+Receive server response : [SubscribeResp [subReqID=4, respCode=0, desc=Netty book order succeed, 3 days later, sent to the designated address]]
+Receive server response : [SubscribeResp [subReqID=5, respCode=0, desc=Netty book order succeed, 3 days later, sent to the designated address]]
+Receive server response : [SubscribeResp [subReqID=6, respCode=0, desc=Netty book order succeed, 3 days later, sent to the designated address]]
+Receive server response : [SubscribeResp [subReqID=7, respCode=0, desc=Netty book order succeed, 3 days later, sent to the designated address]]
+Receive server response : [SubscribeResp [subReqID=8, respCode=0, desc=Netty book order succeed, 3 days later, sent to the designated address]]
+Receive server response : [SubscribeResp [subReqID=9, respCode=0, desc=Netty book order succeed, 3 days later, sent to the designated address]]
+ */
